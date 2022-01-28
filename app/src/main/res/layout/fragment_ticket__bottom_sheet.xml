@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/style_bottom_sheet"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="10dp"
+
+    tools:context=".Home.MyTickets.GetTiketsBottomSheet.view.GetTicket">
+
+
+
+    <LinearLayout
+        android:id="@+id/design_bottom_sheet"
+        android:background="@drawable/style_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ticket_sheet_dissmis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_dissmis_icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/graphik_regular"
+                android:text="@string/ticket"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/light_white"
+                android:textSize="18sp"
+                tools:ignore="RtlCompat" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="2dp"
+            android:background="@color/app_fon_color" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_ticket_blue_fon"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            tools:ignore="MissingConstraints">
+
+
+<!--            <ImageView-->
+<!--                android:id="@+id/blue_fon"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/ic_ticket_blue_fon" />-->
+
+            <ImageView
+                android:id="@+id/green_fon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_ticket_green_fon" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/green_fon"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/eventName"
+                   android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/graphik_regular"
+                    android:singleLine="true"
+                    android:textColor="@color/light_white"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/eventLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:drawableStart="@drawable/ic_location_icon"
+                    android:drawablePadding="15dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/graphik_regular"
+                    android:singleLine="true"
+                    android:textColor="@color/light_white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/eventDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_date_icon"
+                    android:drawablePadding="15dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/graphik_regular"
+                    android:singleLine="true"
+                    android:textColor="@color/light_white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_above="@id/add_to_wallet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/linearLayout"
+                android:orientation="vertical"
+                >
+
+
+
+                    <ImageView
+                        android:padding="30dp"
+                        android:id="@+id/ticket_qr_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_qr" />
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_above="@id/view"
+                android:id="@+id/add_to_wallet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sign_in_button_style"
+                android:padding="15dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:textAllCaps="true"
+                android:textStyle="normal"
+                android:text="@string/add_to_wallet"
+                android:fontFamily="@font/graphik_black"
+                android:textAlignment="center"
+                android:textColor="@color/app_fon_color"
+                android:textSize="16sp"
+
+               />
+            <View
+                android:id="@+id/view"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <include
+        android:visibility="gone"
+        android:id="@+id/event_progress"
+        layout="@layout/loader_include"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

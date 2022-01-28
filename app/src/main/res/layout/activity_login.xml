@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".Login.view.Login"
+    tools:ignore="MissingConstraints">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/scylla_logo" />
+
+
+    <me.grantland.widget.AutofitTextView
+        android:id="@+id/autofitTextView"
+        android:fontFamily="@font/graphik_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="71dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="@string/sign_in_txt"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"
+        tools:ignore="AllCaps" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginLayout"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintDimensionRatio="H,1:0.18"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:theme="@style/HelperTextAppearance"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="34dp"
+        app:errorTextColor="@color/light_white"
+        android:textColorHint="@color/light_white"
+        app:endIconMode="clear_text"
+        app:boxStrokeColor="@color/light_white"
+        app:endIconTint="@color/light_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autofitTextView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login"
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/login_hint"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@color/light_white"
+            android:textColorHighlight="@color/light_white"
+
+            android:textSize="14sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordLayout"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintDimensionRatio="H,1:0.18"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:theme="@style/HelperTextAppearance"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="19dp"
+        android:textColorHint="@color/light_white"
+        app:endIconMode="password_toggle"
+        app:errorTextColor="@color/light_white"
+        app:endIconTint="@color/light_white"
+        app:errorEnabled="true"
+        app:boxStrokeColor="@color/light_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/password"
+            android:layout_height="match_parent"
+            android:hint="@string/password_hint"
+
+            android:inputType="textPassword"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@color/light_white"
+            android:textColorHighlight="@color/light_white"
+            android:textSize="14sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:enabled="false"
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_disable_button"
+        android:padding="15dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textAllCaps="true"
+        android:text="@string/sign_in_btn_txt"
+        android:fontFamily="@font/graphik_black"
+        android:textAlignment="center"
+        android:textColor="@color/app_fon_color"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLayout"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <include
+        android:visibility="gone"
+        android:id="@+id/login_progress"
+        layout="@layout/loader_include"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

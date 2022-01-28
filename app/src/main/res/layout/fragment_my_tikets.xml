@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_fon_color"
+    android:orientation="vertical"
+    tools:context=".Home.MyTickets.view.MyTickets_Fragment"
+    tools:ignore="MissingConstraints">
+
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/scylla_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/my_tickets"
+            android:textColor="@color/light_white"
+            android:textSize="23sp" />
+
+    </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:id="@+id/my_tickets_listView"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:dividerHeight="0dp"
+            android:scrollbars="none"
+            tools:listitem="@layout/my_tickets_list_item" />
+
+
+    <include
+        android:id="@+id/tickets_progress"
+        layout="@layout/loader_include"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/no_inet_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/no_internet_connection"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="25sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/try_again"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/no_inet_txt"
+        android:layout_marginTop="30dp"
+        android:text="@string/try_again"
+        android:textAlignment="center"
+        android:textColor="@color/light_white"
+        android:textSize="25sp"
+        android:visibility="gone" />
+</RelativeLayout>

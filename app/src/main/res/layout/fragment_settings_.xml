@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:gravity="center"
+    android:background="@color/app_fon_color"
+    tools:context=".Home.My_setings.Settings_Fragment">
+
+    <TextView
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:textAlignment="center"
+        android:id="@+id/sign_out"
+        android:background="@drawable/my_tickets_item_style"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:fontFamily="@font/graphik_black"
+        android:textColor="@color/errorColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sign out" />
+
+    <include
+        android:visibility="gone"
+        android:id="@+id/sign_out_progress"
+        layout="@layout/loader_include"/>
+
+</FrameLayout>
