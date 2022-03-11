@@ -40,6 +40,9 @@ android {
 
 dependencies {
 
+    implementation 'com.github.AAChartModel:AAChartCore-Kotlin:-SNAPSHOT'
+    implementation 'com.github.furkanaskin:ClickablePieChart:1.0.9'
+
     //autofittextview
     implementation'me.grantland:autofittextview:0.2.1'
 

@@ -1,17 +1,18 @@
 package scylla.task.scyllatask.Login.view
 
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.view.View.OnFocusChangeListener
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_login.*
-import scylla.task.scyllatask.Helper.getShared_String
 import scylla.task.scyllatask.Helper.openActivity
 import scylla.task.scyllatask.Helper.textTrim
-import scylla.task.scyllatask.Helper.toastMessage
 import scylla.task.scyllatask.Home.HomePage
 import scylla.task.scyllatask.Login.LocalEmailValid
 import scylla.task.scyllatask.Login.LocalPasswordValid
@@ -118,6 +119,18 @@ class Login : AppCompatActivity(), View.OnClickListener {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             }
         })
+
+
+        pass word.onFocusChangeListener = OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                passwordLayout.boxStrokeColor = resources.getColor(R.color.blue)
+            }
+        }
+        login.onFocusChangeListener = OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                loginLayout.boxStrokeColor = resources.getColor(R.color.blue)
+            }
+        }
 
 
     }
